@@ -1,19 +1,50 @@
-# Fraud_Transaction_Detection_NOVAPay
-A machine learning-based fraud detection system for NovaPay to replace outdated, rules-based methods. 
+# NovaPay Fraud Transaction Detection
 
+This project develops a machine learning-based fraud detection system for NovaPay. The objective is to identify potentially fraudulent transactions more effectively than traditional static, rules-based approaches while reducing unnecessary disruption to legitimate customers.
 
+## Business Challenges
 
-# BUSINESS CHALLENGES 
+### 1. Limitations of Static Rule-Based Systems
 
-1. Vulnerability of Static Systems: The current reliance on rigid, rules-based detection methods creates a significant security gap. These systems are too static to adapt to the rapidly evolving tactics used by fraudsters, leaving the platform vulnerable to sophisticated and emerging threats.
+Traditional fraud detection systems often depend on fixed rules and thresholds. These systems may struggle to adapt to changing fraud patterns and newly emerging fraudulent behaviour.
 
-2. Direct Financial Impact: Fraudulent activity leads to immediate financial erosion. This includes the mounting costs of processing refunds, managing chargebacks, and paying penalties for missed fraud, all of which directly diminish the company's profitability.
+### 2. Direct Financial Impact
 
-3. Customer Attrition from False Positives: High rates of false positives, situations where legitimate transactions are incorrectly flagged as fraud  negatively impacts the customer experience and leads to increased attrition as users move to more seamless competitors.
+Fraudulent transactions can cause financial losses through refunds, chargebacks, investigation costs, operational expenses, and penalties associated with undetected fraud.
 
-4. Severe Class Imbalance: The detection process is complicated by a high degree of data imbalance, where fraudulent transactions represent less than 1% of total volume. Identifying these rare anomalies without disrupting the vast majority of legitimate traffic is a major technical hurdle.
+### 3. Customer Attrition Caused by False Positives
 
-5. Regulatory and Compliance RiskStrict AML and KYC frameworks require fraud detection systems to be transparent and auditable. The inability to provide explainable decision-making for flagged transactions poses a risk of regulatory scrutiny and heavy financial penalties.
+False positives occur when legitimate transactions are incorrectly classified as fraudulent. Excessive false positives can interrupt valid transactions, reduce customer trust, and encourage customers to move to competing platforms.
 
-## TARGET VARIABLES 
-Target VariableThe target variable is the Fraud Label, a binary classification output:Value 1 (Fraud): Confirmed fraud, chargebacks, or verified disputes.Value 0 (Legitimate): Valid transactions that cleared successfully.
+### 4. Class Imbalance
+
+Fraud detection is a class-imbalanced classification problem because fraudulent transactions occur less frequently than legitimate transactions.
+
+In the cleaned NovaPay dataset, fraudulent transactions represent approximately 8.8% of the available records. This imbalance means that model performance should not be evaluated using accuracy alone.
+
+Metrics such as precision, recall, F1-score, ROC-AUC, and precision-recall AUC will also be considered.
+
+### 5. Regulatory and Compliance Risk
+
+Anti-Money Laundering and Know Your Customer requirements make transparency and auditability important in financial systems. Fraud predictions should therefore be supported by understandable features and explainable model outputs.
+
+## Target Variable
+
+The target variable is `is_fraud`, a binary classification label:
+
+- `1` — Fraudulent transaction
+- `0` — Legitimate transaction
+
+## Current Project Status
+
+The following stages have been completed:
+
+- Initial data inspection
+- Data-quality assessment
+- Missing-value treatment
+- Invalid-value correction
+- Exploratory data analysis
+- Numerical and categorical fraud analysis
+- Initial feature preparation
+
+The next stages will include feature engineering, preprocessing, model development, model evaluation, and explainability.
